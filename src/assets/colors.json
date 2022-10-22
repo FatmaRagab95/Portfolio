@@ -1,0 +1,26 @@
+{
+  "colors": {
+    "light": {
+      "mainColor": "#fff",
+      "primary": "#000",
+      "subColor":"#fff6ed"
+    },
+    "dark": {
+      "mainColor": "#164460",
+      "primary": "#fff",
+      "subColor":"#0c2e4d"
+    },
+    "grey": {
+      "subColor": "#f1f1f1",
+      "primary": "#000"
+    },
+    "green": {
+      "subColor": "#C6EBC5",
+      "primary": "#000"
+    },
+    "blue": {
+      "subColor": "#c9cdff",
+      "primary": "#000"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+// variables
+$headingFont: "Courgette"; // 'Courgette' / 'Asset'
+
+// global classes
+.main-heading {
+    font-family: #{$headingFont}, cursive !important;
+    font-size:6rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+// reset vuetify font
+#app.v-application .text-h1,
+#app.v-application .text-h2,
+#app.v-application .text-h3,
+#app.v-application .text-h4,
+#app.v-application .text-h5,
+#app.v-application .text-h6,
+#app.v-application .text-body-1,
+#app.v-application .text-body-2,
+#app.v-application .text-caption {
+    font-family: inherit !important;
+}
+#app {
+    font-family: 'Quicksand', 'sans-serif' !important;
+    .app-container {
+        padding-top: 90px;
+    }
+    .page-container {
+        border-left:thin solid #000 !important;
+        border-right:thin solid #000 !important;
+        height: calc(100vh - 186px);
+    }
+
+    hr,.theme--light.v-sheet--outlined {
+        border-color: #000;
+    }
+}
+
+// transition effects
+//1- fade
+.fade-enter-active {
+    transition: all 2s;
+}
+.fade-enter {
+    opacity: 0;
+    transform: translateY(100%);
+}
+.fade-leave-active {
+    opacity: 0;
+}
+//2- slideLeft
+.slideLeft-enter-active {
+    transition: all 2s;
+}
+.slideLeft-enter {
+    opacity: 0;
+    transform: translateX(-100%);
+}
+.slideLeft-leave-active {
+    opacity: 0;
+}
+//3- slideRight
+.slideRight-enter-active {
+    transition: all 2s;
+}
+.slideRight-enter {
+    opacity: 0;
+    transform: translateX(100%);
+}
+.slideRight-leave-active {
+    opacity: 0;
+}
+//4- slideTop
+.slideTop-enter-active {
+    transition: all 2s;
+}
+.slideTop-enter {
+    opacity: 0;
+    transform: translateY(-100%);
+}
+.slideTop-leave-active {
+    opacity: 0;
+}
+//5- slideBottom
+.slideBottom-enter-active {
+    transition: all 2s;
+}
+.slideBottom-enter {
+    opacity: 0;
+    transform: translateY(100%);
+}
+.slideBottom-leave-active {
+    opacity: 0;
+}
+//6- flipx
+.flipx-enter-active {
+    transition: all 2s;
+}
+.flipx-enter {
+    opacity: 0;
+    perspective:1000px;
+    transform: rotateX(90deg);
+}
+.flipx-leave-active {
+    opacity: 0;
+}
