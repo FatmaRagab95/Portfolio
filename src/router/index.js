@@ -3,6 +3,9 @@ import VueRouter from 'vue-router'
 import HomeView from '../views/Home.vue'
 import AboutView from '../views/About.vue'
 import EducationView from '../views/Education'
+import ExperienceView from '../views/Experience'
+import PortfolioView from '../views/Portfolio'
+import ContactView from '../views/Contact'
 
 Vue.use(VueRouter)
 
@@ -29,6 +32,30 @@ const routes = [
     component: EducationView,
     meta: {
       title:"Education"
+    }
+  },
+  {
+    path: '/experience',
+    name: 'experience',
+    component: ExperienceView,
+    meta: {
+      title:"Experience"
+    }
+  },
+  {
+    path: '/portfolio',
+    name: 'portfolio',
+    component: PortfolioView,
+    meta: {
+      title:"Portfolio"
+    }
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: ContactView,
+    meta: {
+      title:"Contact"
     }
   },
 ]

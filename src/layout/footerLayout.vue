@@ -2,15 +2,15 @@
   <v-footer
     padless
     height="90"
-    color="subColor"
+    color="frame"
   >
     <v-container fluid class="fill-height py-0">
       <v-row justify="center" align="center">
-        <v-btn tile width="100" class="mx-1" color="primary" @click='go(-1)'>
-          <v-icon>mdi-arrow-left</v-icon>
+        <v-btn tile width="100" class="mx-1" color="box" @click='go(-1)'>
+          <v-icon color="txtBox">mdi-arrow-left</v-icon>
         </v-btn>
-        <v-btn tile width="100" class="mx-1" color="primary"  @click='go(1)'>
-          <v-icon>mdi-arrow-right</v-icon>
+        <v-btn tile width="100" class="mx-1" color="txtBox"  @click='go(1)'>
+          <v-icon color="box">mdi-arrow-right</v-icon>
         </v-btn>
       </v-row>
     </v-container>
@@ -50,15 +50,15 @@ export default {
         that.$router.push({ name: pages[currentIndix + 1].name });
       }
       // going backward to previous page
-      if (currentIndix > 0 && num < 0) {
+      else if (currentIndix > 0 && num < 0) {
         that.$router.push({ name: pages[currentIndix - 1].name });
       }
       // going to first page
-      if (currentIndix >= pages.length - 1 && num > 0) {
+      else if (currentIndix >= pages.length - 1 && num > 0) {
         that.$router.push({ name: pages[0].name });
       }
       // going to last page
-      if (currentIndix == 0 && num < 0) {
+      else if (currentIndix == 0 && num < 0) {
         that.$router.push({ name: pages[pages.length - 1].name });
       }
     }

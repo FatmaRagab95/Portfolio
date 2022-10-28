@@ -1,15 +1,30 @@
 <template>
   <v-app>
+    <!-- themes settings -->
+    <template>
+        <v-btn tile absolute right fab x-small @click="openThemeSet = true">
+            <v-icon>mdi-cog-box</v-icon>
+        </v-btn>
+        <transition name="slideLeft">
+          <themes-set v-if="openThemeSet">
+            <template v-slot:closeBtn>
+                <v-btn icon @click="openThemeSet = false">
+                    <v-icon>mdi-close</v-icon>
+                </v-btn>
+            </template>
+          </themes-set>
+        </transition>
+    </template>
       <top-bar></top-bar>
-      <v-container fluid class="app-container px-0 pb-0 subColor">
-        <v-divider></v-divider>
+      <v-container fluid class="app-container px-0 pb-0 frame">
+        <v-divider class="linesColorOut"></v-divider>
         <v-row>
           <v-col :cols="3" :lg='2'>
             <info-bar></info-bar>
           </v-col>
           <v-col :cols="8" :lg='9' class="px-0">
             <v-sheet class="page-container overflow-hidden"
-             color="transparent" flat width="100%" tile>
+             color="box" flat width="100%" tile>
               <transition :name="transitionName">
                 <router-view class="view"></router-view>
               </transition>
@@ -22,7 +37,7 @@
                   <v-btn
                     icon
                   >
-                    <v-icon size="24px">
+                    <v-icon size="24px" color='txtFrame'>
                       {{ icon }}
                     </v-icon>
                   </v-btn>
@@ -32,7 +47,7 @@
           </v-col>
         </v-row>
       </v-container>
-        <v-divider></v-divider>
+        <v-divider class="linesColorOut"></v-divider>
       <footer-layout></footer-layout>
   </v-app>
 </template>
@@ -41,16 +56,19 @@
 import topBar from './layout/topBar.vue';
 import footerLayout from './layout/footerLayout.vue';
 import infoBar from './components/infoBar.vue';
+import themesSet from './components/themesSet.vue';
 export default {
   name: 'HomeView',
   components: {
     topBar,
     footerLayout,
-    infoBar
+    infoBar,
+    themesSet
   },
   data () {
       return {
-        transitionName:"",
+        openThemeSet:false,
+        transitionName:"slideLeft",
         icons: [
           'mdi-facebook',
           'mdi-twitter',
@@ -58,12 +76,12 @@ export default {
           'mdi-instagram',
         ],
         transitions: [
-          "fade",
           "slideLeft",
           "slideRight",
           "slideTop",
           "slideBottom",
-          "flipx"
+          "flipx",
+          "flipy"
         ]
       }
   },
@@ -72,8 +90,21 @@ export default {
       immediate:true,
       deep:true,
       handler() {
-        let random = Math.floor(Math.random() * (this.transitions.length - 0) + 0);
-        this.transitionName = this.transitions[random]
+        let currentTrans = -1;
+        for (let i = 0; i < this.transitions.length; i++) {
+          if (this.transitions[i] == this.transitionName) {
+            currentTrans = i;
+            break;
+          }
+        }
+        // going forward to next effect
+        if (currentTrans > -1 && currentTrans < this.transitions.length - 1) {
+          this.transitionName = this.transitions[currentTrans + 1]
+        }
+        // going to first effect
+        else if (currentTrans >= this.transitions.length - 1) {
+          this.transitionName = this.transitions[0]
+        }
       }
     }
   }

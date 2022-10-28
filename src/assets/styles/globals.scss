@@ -7,10 +7,6 @@ $headingFont: "Courgette"; // 'Courgette' / 'Asset'
     font-size:6rem;
 }
 
-a {
-    text-decoration: none;
-}
-
 // reset vuetify font
 #app.v-application .text-h1,
 #app.v-application .text-h2,
@@ -29,81 +25,52 @@ a {
         padding-top: 90px;
     }
     .page-container {
-        border-left:thin solid #000 !important;
-        border-right:thin solid #000 !important;
+        border-left:thin solid #333 !important;
+        border-right:thin solid #333 !important;
         height: calc(100vh - 186px);
     }
-
-    hr,.theme--light.v-sheet--outlined {
-        border-color: #000;
+    a {
+        text-decoration: none !important;
+        &:not(.activeNav) {
+            color: inherit !important;
+        }
     }
 }
 
 // transition effects
-//1- fade
-.fade-enter-active {
-    transition: all 2s;
-}
-.fade-enter {
-    opacity: 0;
-    transform: translateY(100%);
-}
-.fade-leave-active {
-    opacity: 0;
-}
-//2- slideLeft
-.slideLeft-enter-active {
-    transition: all 2s;
-}
+//slideLeft
 .slideLeft-enter {
-    opacity: 0;
-    transform: translateX(-100%);
+    transform: perspective(1000em) translateX(-100%);
 }
-.slideLeft-leave-active {
-    opacity: 0;
-}
-//3- slideRight
-.slideRight-enter-active {
-    transition: all 2s;
-}
+//slideRight
 .slideRight-enter {
-    opacity: 0;
-    transform: translateX(100%);
+    transform: perspective(1000em) translateX(100%);
 }
-.slideRight-leave-active {
-    opacity: 0;
-}
-//4- slideTop
-.slideTop-enter-active {
-    transition: all 2s;
-}
+//slideTop
 .slideTop-enter {
-    opacity: 0;
-    transform: translateY(-100%);
+    transform: perspective(1000em) translateY(-100%);
 }
-.slideTop-leave-active {
-    opacity: 0;
-}
-//5- slideBottom
-.slideBottom-enter-active {
-    transition: all 2s;
-}
+//slideBottom
 .slideBottom-enter {
-    opacity: 0;
-    transform: translateY(100%);
+    transform: perspective(1000em) translateY(100%);
 }
-.slideBottom-leave-active {
-    opacity: 0;
-}
-//6- flipx
-.flipx-enter-active {
-    transition: all 2s;
-}
+//flipx
 .flipx-enter {
-    opacity: 0;
-    perspective:1000px;
-    transform: rotateX(90deg);
+    transform: perspective(1000em)
+    rotateX(90deg);
+    transform-origin: top center;
 }
-.flipx-leave-active {
-    opacity: 0;
+//flipy
+.flipy-enter {
+    perspective:1000px;
+    transform: translateY(50%) rotateY(80deg);
+}
+
+.slideRight-enter-active,
+.flipx-enter-active,
+.flipy-enter-active,
+.slideBottom-enter-active,
+.slideTop-enter-active,
+.slideLeft-enter-active {
+    transition: all 1s ease;
 }

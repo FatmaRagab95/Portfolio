@@ -1,26 +1,134 @@
 {
   "colors": {
     "light": {
-      "mainColor": "#fff",
-      "primary": "#000",
-      "subColor":"#fff6ed"
+      "themeName":"light",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#dbf6fd",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#333333"
     },
     "dark": {
-      "mainColor": "#164460",
-      "primary": "#fff",
-      "subColor":"#0c2e4d"
+      "themeName":"dark",
+      "box": "#f1f1f1",
+      "txtBox":"#000000",
+      "primary": "#FFFFFF",
+      "frame":"#111",
+      "txtFrame":"#f1f1f1",
+      "linesColorOut":"#FFFFFF",
+      "linesColorIns":"#333333"
     },
     "grey": {
-      "subColor": "#f1f1f1",
-      "primary": "#000"
+      "themeName":"grey",
+      "box": "#f1f1f1",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame": "#f1f1f1",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#333333"
     },
-    "green": {
-      "subColor": "#C6EBC5",
-      "primary": "#000"
+    "orange": {
+      "themeName":"orange",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#FFFFFF",
+      "frame": "#ff693d",
+      "txtFrame":"#FFFFFF",
+      "linesColorOut":"#FFFFFF",
+      "linesColorIns":"#333333"
+    },
+    "lightBlue": {
+      "themeName":"lightBlue",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame": "#c9cdff",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#333333"
+    },
+    "pink": {
+      "themeName":"pink",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame": "#fff6ed",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#333333"
+    },
+    "blackWhite": {
+      "themeName":"blackWhite",
+      "box": "#000000",
+      "txtBox":"#FFFFFF",
+      "primary": "#000000",
+      "frame":"#FFFFFF",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#FFFFFF"
+    },
+    "white": {
+      "themeName":"white",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#FFFFFF",
+      "txtFrame":"#000000",
+      "linesColorOut":"#333333",
+      "linesColorIns":"#333333"
+    },
+    "rose": {
+      "themeName":"rose",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#fd346e",
+      "txtFrame":"#FFFFFF",
+      "linesColorOut":"#FFFFFF",
+      "linesColorIns":"#333333"
+    },
+    "yellow": {
+      "themeName":"yellow",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#fffc95",
+      "txtFrame":"#000000",
+      "linesColorOut":"#000000",
+      "linesColorIns":"#333333"
+    },
+    "purple": {
+      "themeName":"purple",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#6001d3",
+      "txtFrame":"#FFFFFF",
+      "linesColorOut":"#FFFFFF",
+      "linesColorIns":"#333333"
     },
     "blue": {
-      "subColor": "#c9cdff",
-      "primary": "#000"
+      "themeName":"blue",
+      "box": "#FFFFFF",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#b8daff",
+      "txtFrame":"#000000",
+      "linesColorOut":"#000000",
+      "linesColorIns":"#333333"
+    },
+    "lightOrange": {
+      "themeName":"lightOrange",
+      "box": "#ffdfb7",
+      "txtBox":"#000000",
+      "primary": "#000000",
+      "frame":"#ffdfb7",
+      "txtFrame":"#000000",
+      "linesColorOut":"#000000",
+      "linesColorIns":"#333333"
     }
   }
 }

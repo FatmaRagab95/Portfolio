@@ -8,7 +8,7 @@ export default new Vuetify({
         dark:false,
         themes: {
             dark: colors.colors.dark,
-            light: colors.colors.grey,
+            light: colors.colors.light,
         },
     },
     treeShake: true,
