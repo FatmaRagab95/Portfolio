@@ -31,6 +31,10 @@ $headingFont: "Courgette"; // 'Courgette' / 'Asset'
         border-left:thin solid #333 !important;
         border-right:thin solid #333 !important;
         height: calc(100vh - 186px);
+
+        @media screen and (max-width: 600px) {
+            height: auto;
+        }
     }
     a {
         text-decoration: none !important;

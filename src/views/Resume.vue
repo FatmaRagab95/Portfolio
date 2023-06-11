@@ -32,10 +32,8 @@
                     :key="item.title"
                     :class="{ 'mx-0': !showCards }"
                   >
-                    <v-layout>
-                      <v-divider class="linesColorIns" vertical></v-divider>
-                      <v-flex grow>
-                        <v-divider class="linesColorIns"></v-divider>
+                    <outlined-card>
+                      <template v-slot:content>
                         <v-card
                           @click="
                             opendedSection != item.title
@@ -115,7 +113,6 @@
                                   height="40px"
                                   right
                                   width="40px"
-                                  @click="openSection(item.title)"
                                   depressed
                                   outlined
                                   v-else
@@ -126,10 +123,8 @@
                             </v-slide-x-transition>
                           </div>
                         </v-card>
-                        <v-divider class="linesColorIns"></v-divider>
-                      </v-flex>
-                      <v-divider class="linesColorIns" vertical></v-divider>
-                    </v-layout>
+                      </template>
+                    </outlined-card>
                   </v-col>
                 </v-row>
               </v-container>
@@ -174,9 +169,10 @@
 import Skills from "./Skills.vue";
 import Education from "./Education.vue";
 import Experience from "./Experience.vue";
+import outlinedCard from "@/components/outlinedCard.vue";
 export default {
   name: "educationView",
-  components: { Skills, Education, Experience },
+  components: { Skills, Education, Experience, outlinedCard },
   data() {
     return {
       opendedSection: "skills",
