@@ -2,8 +2,9 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/Home.vue'
 import AboutView from '../views/About.vue'
-import EducationView from '../views/Education'
-import ExperienceView from '../views/Experience'
+import ResumeView from '../views/Resume'
+// import EducationView from '../views/Education'
+// import ExperienceView from '../views/Experience'
 import PortfolioView from '../views/Portfolio'
 import ContactView from '../views/Contact'
 
@@ -27,19 +28,11 @@ const routes = [
     }
   },
   {
-    path: '/education',
-    name: 'education',
-    component: EducationView,
+    path: '/resume',
+    name: 'resume',
+    component: ResumeView,
     meta: {
-      title:"Education"
-    }
-  },
-  {
-    path: '/experience',
-    name: 'experience',
-    component: ExperienceView,
-    meta: {
-      title:"Experience"
+      title:"Resume"
     }
   },
   {

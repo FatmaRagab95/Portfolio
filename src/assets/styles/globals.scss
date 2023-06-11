@@ -6,6 +6,9 @@ $headingFont: "Courgette"; // 'Courgette' / 'Asset'
     font-family: #{$headingFont}, cursive !important;
     font-size:6rem;
 }
+.main-font {
+    font-family: #{$headingFont}, cursive !important;
+}
 
 // reset vuetify font
 #app.v-application .text-h1,
