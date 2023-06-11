@@ -37,7 +37,11 @@
                       <v-flex grow>
                         <v-divider class="linesColorIns"></v-divider>
                         <v-card
-                          @click="openSection(item.title)"
+                          @click="
+                            opendedSection != item.title
+                              ? openSection(item.title)
+                              : closeSection()
+                          "
                           outlined
                           flat
                           tile
@@ -65,7 +69,6 @@
                                       height="40px"
                                       right
                                       width="40px"
-                                      @click="openSection(item.title)"
                                       depressed
                                       outlined
                                     >
@@ -96,7 +99,6 @@
                                   fab
                                   small
                                   color="red"
-                                  @click="closeSection()"
                                   v-if="opendedSection == item.title"
                                   outlined
                                   class="mx-2"
