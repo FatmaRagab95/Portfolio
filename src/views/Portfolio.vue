@@ -4,7 +4,7 @@
   >
     <v-container class="px-6">
       <h1 class="main-heading text-center">Portfolio</h1>
-      <v-tabs color="txtBox--text" right background-color="transparent">
+      <v-tabs right background-color="transparent">
         <v-tab>Landscape</v-tab>
         <v-tab>City</v-tab>
         <v-tab>Abstract</v-tab>
