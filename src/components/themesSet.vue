@@ -1,86 +1,86 @@
 <template>
   <v-navigation-drawer right fixed class="theme-settings" width="340">
     <v-list-item>
-        <v-list-item-title class="text-h6"> Color Settings </v-list-item-title>
-        <v-list-item-icon>
-            <slot name="closeBtn"></slot>
-        </v-list-item-icon>
+      <v-list-item-title class="text-h6"> Color Settings </v-list-item-title>
+      <v-list-item-icon>
+        <slot name="closeBtn"></slot>
+      </v-list-item-icon>
     </v-list-item>
 
     <v-divider></v-divider>
 
     <div class="text-center">
-        <h3 class="text-caption my-2">Choose Theme</h3>
-        <template v-for="theme in Object.keys(themesOriginal)">
-          <v-btn
-              tile
-              x-small
-              :key="theme + '-theme'"
-              :color="themesOriginal[theme].frame"
-              class="ma-1 px-0"
-              height="25"
-              min-width="25"
-              @click="changeTheme(theme)"
-              elevation="1"
-          >
-            <v-icon :color="themesOriginal[theme].box">mdi-rectangle</v-icon>
-          </v-btn>
-        </template>
+      <h3 class="text-caption my-2">Choose Theme</h3>
+      <template v-for="theme in Object.keys(themesOriginal)">
+        <v-btn
+          tile
+          x-small
+          :key="theme + '-theme'"
+          :color="themesOriginal[theme].frame"
+          class="ma-1 px-0"
+          height="25"
+          min-width="25"
+          @click="changeTheme(theme)"
+          elevation="1"
+        >
+          <v-icon :color="themesOriginal[theme].box">mdi-rectangle</v-icon>
+        </v-btn>
+      </template>
     </div>
     <!-- change current theme -->
 
     <v-divider class="my-3"></v-divider>
     <!-- frame Color -->
     <div class="text-center">
-        <h3 class="text-caption my-2">
-          Frame Color
+      <h3 class="text-caption my-2">
+        Frame Color
+        <v-btn
+          tile
+          x-small
+          :color="currentTheme.frame"
+          class="mx-1 px-0"
+          height="25"
+          min-width="25"
+          :elevation="1"
+        >
+        </v-btn>
+      </h3>
+      <template v-for="(color, i) in frameSuggested">
+        <v-btn
+          x-small
+          :key="color + i + '-frame'"
+          :color="color"
+          class="mx-1 px-0"
+          height="25"
+          min-width="25"
+          rounded
+          @click="currentTheme.frame = color"
+          :elevation="1"
+        >
+        </v-btn>
+      </template>
+      <v-menu offset-y>
+        <template v-slot:activator="{ on, attrs }">
           <v-btn
-            tile
+            class="color-pick ma-1 px-0"
+            color="transparent"
+            v-bind="attrs"
+            v-on="on"
             x-small
-            :color="currentTheme.frame"
-            class="mx-1 px-0"
-            height="25"
-            min-width="25"
-            :elevation="1"
-            >
-            </v-btn>
-        </h3>
-        <template v-for="(color , i) in frameSuggested">
-            <v-btn
-            x-small
-            :key="color + i + '-frame'"
-            :color="color"
-            class="mx-1 px-0"
             height="25"
             min-width="25"
             rounded
-            @click="currentTheme.frame = color"
-            :elevation="1"
-            >
-            </v-btn>
+            elevation="0"
+          >
+            <v-icon small>mdi-plus</v-icon>
+          </v-btn>
         </template>
-        <v-menu offset-y>
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                class="color-pick ma-1 px-0"
-                color="transparent"
-                v-bind="attrs"
-                v-on="on"
-                x-small
-                height="25"
-                min-width="25"
-                rounded
-                elevation="0"
-              >
-                <v-icon small>mdi-plus</v-icon>
-              </v-btn>
-            </template>
-            <v-color-picker
-            dot-size="25"
-            swatches-max-height="200"
-            v-model="currentTheme.frame"
-            ></v-color-picker>
-        </v-menu>
+        <v-color-picker
+          dot-size="25"
+          swatches-max-height="200"
+          v-model="currentTheme.frame"
+        ></v-color-picker>
+      </v-menu>
     </div>
 
     <v-divider class="my-3"></v-divider>
@@ -97,7 +97,7 @@
           min-width="25"
           :elevation="1"
         >
-          <span :style="{color: currentTheme.txtFrame}">ABC</span>
+          <span :style="{ color: currentTheme.txtFrame }">ABC</span>
         </v-btn>
       </h3>
       <template v-for="(color, i) in txtSuggested">
@@ -155,7 +155,11 @@
           <v-icon :color="currentTheme.linesColorOut">mdi-minus</v-icon>
         </v-btn>
       </h3>
-      <v-sheet color="transparent" max-width="230" class="mx-auto d-inline-block">
+      <v-sheet
+        color="transparent"
+        max-width="230"
+        class="mx-auto d-inline-block"
+      >
         <v-combobox
           dense
           outlined
@@ -166,12 +170,26 @@
           hide-details
         >
           <template v-slot:selection="{}">
-            <v-sheet :color="currentTheme.frame" min-width="170" elevation="1" class="pa-2">
-              <v-sheet :color="currentTheme.linesColorOut" min-width="160" height="2"></v-sheet>
+            <v-sheet
+              :color="currentTheme.frame"
+              min-width="170"
+              elevation="1"
+              class="pa-2"
+            >
+              <v-sheet
+                :color="currentTheme.linesColorOut"
+                min-width="160"
+                height="2"
+              ></v-sheet>
             </v-sheet>
           </template>
           <template v-slot:item="{ item }">
-            <v-sheet :color="currentTheme.frame" min-width="160" elevation="1" class="pa-2">
+            <v-sheet
+              :color="currentTheme.frame"
+              min-width="160"
+              elevation="1"
+              class="pa-2"
+            >
               <v-sheet :color="item" min-width="160" height="2"></v-sheet>
             </v-sheet>
           </template>
@@ -206,17 +224,17 @@
     <div class="text-center">
       <h3 class="text-caption my-2">
         Box Color
-          <v-btn
-              tile
-              x-small
-              :color="currentTheme.frame"
-              class="mx-1 px-0"
-              height="25"
-              min-width="25"
-              elevation="1"
-          >
-            <v-icon :color="currentTheme.box">mdi-rectangle</v-icon>
-          </v-btn>
+        <v-btn
+          tile
+          x-small
+          :color="currentTheme.frame"
+          class="mx-1 px-0"
+          height="25"
+          min-width="25"
+          elevation="1"
+        >
+          <v-icon :color="currentTheme.box">mdi-rectangle</v-icon>
+        </v-btn>
       </h3>
       <template v-for="color in boxSuggested">
         <v-btn
@@ -285,7 +303,7 @@
           min-width="25"
           elevation="1"
         >
-          <span :style="{color: currentTheme.txtBox}">ABC</span>
+          <span :style="{ color: currentTheme.txtBox }">ABC</span>
         </v-btn>
       </h3>
       <template v-for="color in txtSuggested">
@@ -300,7 +318,7 @@
           @click="currentTheme.txtBox = color"
           :elevation="1"
         >
-          <span :style="{color: color}">ABC</span>
+          <span :style="{ color: color }">ABC</span>
         </v-btn>
       </template>
       <v-menu offset-y>
@@ -326,11 +344,12 @@
         ></v-color-picker>
       </v-menu>
     </div>
-    
+
     <v-divider class="my-3"></v-divider>
     <!-- lines insides box Color -->
     <div class="text-center mb-12">
-      <h3 class="text-caption my-2">Box Lines
+      <h3 class="text-caption my-2">
+        Box Lines
         <v-btn
           tile
           x-small
@@ -344,7 +363,11 @@
         </v-btn>
       </h3>
 
-      <v-sheet color="transparent" max-width="230" class="mx-auto d-inline-block">
+      <v-sheet
+        color="transparent"
+        max-width="230"
+        class="mx-auto d-inline-block"
+      >
         <v-combobox
           dense
           outlined
@@ -356,12 +379,26 @@
           label="Box Lines"
         >
           <template v-slot:selection="{}">
-            <v-sheet :color="currentTheme.box" min-width="170" elevation="1" class="pa-2">
-              <v-sheet :color="currentTheme.linesColorIns" min-width="160" height="2"></v-sheet>
+            <v-sheet
+              :color="currentTheme.box"
+              min-width="170"
+              elevation="1"
+              class="pa-2"
+            >
+              <v-sheet
+                :color="currentTheme.linesColorIns"
+                min-width="160"
+                height="2"
+              ></v-sheet>
             </v-sheet>
           </template>
           <template v-slot:item="{ item }">
-            <v-sheet :color="currentTheme.box" min-width="160" elevation="1" class="pa-2">
+            <v-sheet
+              :color="currentTheme.box"
+              min-width="160"
+              elevation="1"
+              class="pa-2"
+            >
               <v-sheet :color="item" min-width="160" height="2"></v-sheet>
             </v-sheet>
           </template>
@@ -395,7 +432,7 @@
   </v-navigation-drawer>
 </template>
 <script>
-import Vue from 'vue';
+import Vue from "vue";
 import colors from "@/assets/colors.json";
 export default {
   name: "HomeView",
@@ -416,9 +453,9 @@ export default {
       deep: true,
       handler() {
         let that = this;
-        Object.keys(that.currentTheme).map(x => {
-          if (typeof that.currentTheme[x] == 'string' && x != "themeName") {
-            that.currentTheme[x] = that.currentTheme[x].substring(0,7)
+        Object.keys(that.currentTheme).map((x) => {
+          if (typeof that.currentTheme[x] == "string" && x != "themeName") {
+            that.currentTheme[x] = that.currentTheme[x].substring(0, 7);
           }
         });
         this.changeTheme(this.currentName);
@@ -441,7 +478,9 @@ export default {
     },
   },
   mounted() {
-    this.currentName = this.$vuetify.theme.dark ? 'dark' : this.$vuetify.theme.themes.light.themeName;
+    this.currentName = this.$vuetify.theme.dark
+      ? "dark"
+      : this.$vuetify.theme.themes.light.themeName;
     this.currentTheme = this.themes[this.currentName];
     Object.keys(colors.colors).map((x) => {
       const that = this;
@@ -456,7 +495,8 @@ export default {
 .theme-settings {
   .color-pick {
     border: double 3px transparent;
-    background-image: linear-gradient(white, white), radial-gradient(circle at top left, red, yellow, blue,);
+    background-image: linear-gradient(white, white),
+      radial-gradient(circle at top left, red, yellow, blue);
     background-origin: border-box;
     background-clip: padding-box, border-box;
   }

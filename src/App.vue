@@ -5,15 +5,15 @@
       <v-btn tile absolute right fab x-small @click="openThemeSet = true">
         <v-icon>mdi-cog-box</v-icon>
       </v-btn>
-      <transition name="slideLeft">
-        <themes-set v-if="openThemeSet">
+      <v-slide-x-transition>
+        <themes-set v-if="openThemeSet" v-click-outside="clickOutsidTheme">
           <template v-slot:closeBtn>
             <v-btn icon @click="openThemeSet = false">
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </template>
         </themes-set>
-      </transition>
+      </v-slide-x-transition>
     </template>
     <top-bar></top-bar>
     <v-container fluid class="app-container px-0 pb-0 frame">
@@ -109,6 +109,13 @@ export default {
           this.transitionName = this.transitions[0];
         }
       },
+    },
+  },
+  methods: {
+    clickOutsidTheme() {
+      if (this.openThemeSet) {
+        this.openThemeSet = false;
+      }
     },
   },
   mounted() {},
