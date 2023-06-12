@@ -65,6 +65,7 @@ import topBar from "./layout/topBar.vue";
 import footerLayout from "./layout/footerLayout.vue";
 import infoBar from "./components/infoBar.vue";
 import themesSet from "./components/themesSet.vue";
+import PDFParser from "pdf2json";
 export default {
   name: "HomeView",
   components: {
@@ -110,6 +111,21 @@ export default {
         }
       },
     },
+  },
+  mounted() {
+    const pdfParser = new PDFParser();
+
+    pdfParser.loadPDF("/path/to/cv.pdf");
+
+    pdfParser.on("pdfParser_dataReady", (pdfData) => {
+      const text = pdfData.formImage.Pages[0].Texts.map((item) =>
+        decodeURIComponent(item.R[0].T)
+      ).join(" ");
+      this.name = extractName(text);
+      this.jobTitle = extractJobTitle(text);
+      this.email = extractEmail(text);
+      this.workExperience = extractWorkExperience(text);
+    });
   },
 };
 </script>
