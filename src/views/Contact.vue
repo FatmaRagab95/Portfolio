@@ -4,14 +4,22 @@
   >
     <v-container class="px-6 box txtBox--text">
       <v-row align="center" class="px-6">
-        <h1 class="main-heading mb-1">Contact Me</h1>
-        <v-spacer></v-spacer>
+        <h1
+          class="main-heading mb-1 mx-auto"
+          :class="$vuetify.breakpoint.lgAndUp ? 'text-start' : 'text-center'"
+        >
+          Contact Me
+        </h1>
+        <v-spacer v-if="$vuetify.breakpoint.lgAndUp"></v-spacer>
         <v-divider
-          v-if="$vuetify.breakpoint.mdAndUp"
+          v-if="$vuetify.breakpoint.lgAndUp"
           class="mx-3 linesColorIns"
           vertical
         ></v-divider>
-        <div>
+        <div
+          :class="$vuetify.breakpoint.lgAndUp ? 'text-start' : 'text-center'"
+          class="mx-auto"
+        >
           <div class="mb-2">
             <v-icon small color="txtBox">mdi-email</v-icon>
             <span class="font-weight-bold mx-3 text-caption">E-mail</span>
@@ -71,9 +79,10 @@
                     <v-divider class="linesColorOut" vertical></v-divider>
                     <div class="ma-3">
                       <v-btn
-                        x-large
+                        :x-large="$vuetify.breakpoint.mdAndUp"
+                        :small="$vuetify.breakpoint.smAndDown"
                         tile
-                        min-height="80"
+                        :min-height="$vuetify.breakpoint.smAndUp ? 80 : 60"
                         color="txtBox"
                         class="box--text"
                       >

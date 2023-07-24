@@ -48,7 +48,7 @@
 
     <!-- timeline -->
     <template v-if="true">
-      <v-timeline align-top>
+      <v-timeline align-top :dense="$vuetify.breakpoint.mdAndDown">
         <v-timeline-item v-for="(ex, i) in experinces" :key="i" small>
           <template v-slot:opposite>
             <span :class="`headline font-weight-bold`" v-text="ex.date"></span>
@@ -71,7 +71,8 @@
 </template>
 
 <script>
-export default {
+import Vue from "vue";
+export default Vue.extend({
   name: "AboutView",
   components: {},
   data() {
@@ -122,7 +123,7 @@ export default {
       }
     },
   },
-};
+});
 </script>
 
 <style lang="scss">

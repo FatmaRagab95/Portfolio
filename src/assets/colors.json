@@ -1,7 +1,7 @@
 {
   "colors": {
     "light": {
-      "themeName":"light",
+      "themeName":"Light",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -11,7 +11,7 @@
       "linesColorIns":"#333333"
     },
     "dark": {
-      "themeName":"dark",
+      "themeName":"Dark",
       "box": "#f1f1f1",
       "txtBox":"#000000",
       "primary": "#FFFFFF",
@@ -21,7 +21,7 @@
       "linesColorIns":"#333333"
     },
     "grey": {
-      "themeName":"grey",
+      "themeName":"Grey",
       "box": "#f1f1f1",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -31,7 +31,7 @@
       "linesColorIns":"#333333"
     },
     "orange": {
-      "themeName":"orange",
+      "themeName":"Orange",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#FFFFFF",
@@ -40,8 +40,8 @@
       "linesColorOut":"#FFFFFF",
       "linesColorIns":"#333333"
     },
-    "lightBlue": {
-      "themeName":"lightBlue",
+    "light_blue": {
+      "themeName":"Light_Blue",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -51,7 +51,7 @@
       "linesColorIns":"#333333"
     },
     "pink": {
-      "themeName":"pink",
+      "themeName":"Pink",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -60,8 +60,8 @@
       "linesColorOut":"#333333",
       "linesColorIns":"#333333"
     },
-    "blackWhite": {
-      "themeName":"blackWhite",
+    "black_and_white": {
+      "themeName":"Black_And_White",
       "box": "#000000",
       "txtBox":"#FFFFFF",
       "primary": "#000000",
@@ -71,7 +71,7 @@
       "linesColorIns":"#FFFFFF"
     },
     "white": {
-      "themeName":"white",
+      "themeName":"White",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -81,7 +81,7 @@
       "linesColorIns":"#333333"
     },
     "rose": {
-      "themeName":"rose",
+      "themeName":"Rose",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -91,7 +91,7 @@
       "linesColorIns":"#333333"
     },
     "yellow": {
-      "themeName":"yellow",
+      "themeName":"Yellow",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -101,7 +101,7 @@
       "linesColorIns":"#333333"
     },
     "purple": {
-      "themeName":"purple",
+      "themeName":"Purple",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -111,7 +111,7 @@
       "linesColorIns":"#333333"
     },
     "blue": {
-      "themeName":"blue",
+      "themeName":"Blue",
       "box": "#FFFFFF",
       "txtBox":"#000000",
       "primary": "#000000",
@@ -120,8 +120,8 @@
       "linesColorOut":"#000000",
       "linesColorIns":"#333333"
     },
-    "lightOrange": {
-      "themeName":"lightOrange",
+    "light_orange": {
+      "themeName":"Light_Orange",
       "box": "#ffdfb7",
       "txtBox":"#000000",
       "primary": "#000000",

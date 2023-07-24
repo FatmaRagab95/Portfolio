@@ -7,7 +7,7 @@
         style="height: 100%"
       >
         <v-scale-transition leave-absolute>
-          <v-col cols="12" :md="showCards ? 12 : 4">
+          <v-col cols="12" :md="showCards ? 12 : 5">
             <v-banner sticky elevation="0" tile>
               <v-container fluid class="mt-5">
                 <v-scale-transition leave-absolute>
@@ -79,8 +79,11 @@
                             <v-divider
                               class="linesColorIns"
                               vertical
+                              v-if="$vuetify.breakpoint.lgAndUp"
                             ></v-divider>
-                            <template v-if="showCards">
+                            <template
+                              v-if="showCards && $vuetify.breakpoint.lgAndUp"
+                            >
                               <v-avatar class="ma-3" size="80" color="frame">
                                 <v-img
                                   :src="require('@/assets/' + item.avatar)"
@@ -149,7 +152,7 @@
           :key="item.title"
         >
           <template v-if="opendedSection === item.title">
-            <v-col cols="12" :md="showCards ? 12 : 7">
+            <v-col cols="12" :md="showCards ? 12 : 6">
               <v-container class="py-0" style="height: 100%">
                 <v-layout style="height: 100%" align-center>
                   <v-flex>

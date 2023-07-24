@@ -2,10 +2,15 @@
   <div class="about overflow-auto fill-height box txtBox--text elevation-12">
     <v-container class="px-6">
       <v-row align="center" class="px-6">
-        <h1 class="main-heading mb-1">About Me</h1>
+        <h1
+          class="main-heading mb-1"
+          :class="$vuetify.breakpoint.lgAndUp ? 'text-start' : 'text-center'"
+        >
+          About Me
+        </h1>
         <v-spacer></v-spacer>
         <v-divider
-          v-if="$vuetify.breakpoint.mdAndUp"
+          v-if="$vuetify.breakpoint.lgAndUp"
           class="mx-3 linesColorIns"
           vertical
         ></v-divider>

@@ -5,6 +5,9 @@ import colors from "@/assets/colors.json";
 Vue.use(Vuetify);
 export default new Vuetify({
     theme: {
+        options: {
+            customProperties: true,
+          },
         dark:false,
         themes: {
             dark: colors.colors.dark,
