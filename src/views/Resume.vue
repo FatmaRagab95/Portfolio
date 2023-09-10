@@ -12,7 +12,7 @@
               <v-container fluid class="mt-5">
                 <v-scale-transition leave-absolute>
                   <h1
-                    class="pb-9"
+                    class="pb-9 txtBox--text"
                     :class="{
                       'text-center': showCards,
                       'pt-6': !showCards,
@@ -46,7 +46,7 @@
                           color="transparent"
                         >
                           <div
-                            class="d-flex flex-no-wrap justify-space-between align-center"
+                            class="d-flex flex-no-wrap justify-space-between align-center txtBox--text"
                           >
                             <v-flex grow>
                               <v-card-title class="text-h5">
@@ -212,7 +212,7 @@ export default {
 };
 </script>
 
-<style lang='scss'>
+<style lang="scss">
 .resume .v-banner__wrapper {
   padding: 0 !important;
 }

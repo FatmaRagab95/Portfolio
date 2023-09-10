@@ -10,16 +10,6 @@
       "linesColorOut":"#333333",
       "linesColorIns":"#333333"
     },
-    "dark": {
-      "themeName":"Dark",
-      "box": "#f1f1f1",
-      "txtBox":"#000000",
-      "primary": "#FFFFFF",
-      "frame":"#111",
-      "txtFrame":"#f1f1f1",
-      "linesColorOut":"#FFFFFF",
-      "linesColorIns":"#333333"
-    },
     "grey": {
       "themeName":"Grey",
       "box": "#f1f1f1",
@@ -78,16 +68,6 @@
       "frame":"#FFFFFF",
       "txtFrame":"#000000",
       "linesColorOut":"#333333",
-      "linesColorIns":"#333333"
-    },
-    "rose": {
-      "themeName":"Rose",
-      "box": "#FFFFFF",
-      "txtBox":"#000000",
-      "primary": "#000000",
-      "frame":"#fd346e",
-      "txtFrame":"#FFFFFF",
-      "linesColorOut":"#FFFFFF",
       "linesColorIns":"#333333"
     },
     "yellow": {

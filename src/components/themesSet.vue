@@ -106,10 +106,10 @@ export default {
         this.currentName = theme.toLowerCase();
         this.currentTheme = this.themes[this.currentName];
       }
-      if (theme != "dark") {
+      if (theme != "dark" && theme != this.currentName) {
         this.$vuetify.theme.dark = false;
         this.$vuetify.theme.themes.light = this.currentTheme;
-      } else {
+      } else if (theme != this.currentName) {
         this.$vuetify.theme.dark = true;
         this.$vuetify.theme.themes.dark = this.currentTheme;
       }
